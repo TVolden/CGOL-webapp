@@ -1,0 +1,52 @@
+﻿@page "/"
+@using dk.itu.game.msc.cgol
+
+<PageTitle>CGOL - Sandbox</PageTitle>
+<h1>Sandbox</h1>
+<div class="game">
+    <div class="actions">
+        <h3>Actions</h3>
+    </div>
+    <div class="collections">
+        <div class="community">
+
+        </div>
+        <div class="decks">
+
+        </div>
+        <div class="hands">
+
+        </div>
+    </div>
+</div>
+<div class="console fixed-bottom">
+    <div class="output">
+        <pre>
+            @console_text
+        </pre>
+    </div>
+    <div class="input">
+        <input type="text" @bind-value="console_input"/>
+        <button @onclick="execute">Execute</button>
+    </div>
+</div>
+
+@code {
+    string console_text = "test";
+    string console_input = "";
+    CGOLService service;
+
+    public Sandbox()
+    {
+        var fac = new CGOLServiceFactory();
+        service = fac.CreateBasic();
+        service.
+    }
+
+    void execute()
+    {
+        service.Parse(console_input);
+        console_text = console_text + "\n> " + console_input;
+        console_input = "";
+    }
+}

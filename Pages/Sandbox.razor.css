@@ -1,0 +1,31 @@
+﻿.game {
+}
+
+.game .actions {
+    width: 150px;
+    background-color: blue;
+}
+
+.console {
+    width:100%;
+    background-color: black;
+    color: white;
+    height: 200px;
+}
+
+.console .output {
+    height: 80%;
+    overflow-y: scroll;
+}
+
+.console .input {
+    height: 20%;
+}
+
+.console .input input {
+    width: 80%;
+}
+
+.console .input button {
+    width: 10%;
+}
